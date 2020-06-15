@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 style="text-align: center">Edit Student</h2>
+    <form action="#" data-th-action="@{/students/edit/{id}(id=${student.id})}" data-th-object="${student}" method="post">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="username" type="text" class="form-control" data-th-name="name" placeholder="Name" data-th-field="*{name}">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input id="password" type="text" class="form-control" data-th-name="email" placeholder="Email" data-th-field="*{email}">
+        </div>
+        <div class="input-group">
+            <input id="id" type="hidden" class="form-control" data-th-name="id" placeholder="Id" data-th-field="*{id}">
+        </div>
+        <input type="submit"  class="btn btn-info glyphicon glyphicon">
+        <a data-th-href="@{/students}" class="btn btn-info glyphicon glyphicon">Cancel</a>
+    </form>
+
+</div>
+</body>
+</html>
